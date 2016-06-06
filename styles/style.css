@@ -1,0 +1,93 @@
+*{
+	box-sizing: border-box;
+	/*border: 2px solid black;*/
+}
+
+body{
+	font-family: 'Lato', sans-serif;
+}
+
+.wrapper{
+	max-width: 80%;
+	margin:auto;
+}
+
+h1,h3{
+	color: #47a3da;
+}
+
+h1{
+	font-weight: 300;
+	font-size: 2.5em;
+}
+
+h3 {
+	font-size: 1.2em;
+	letter-spacing: 0.4em;
+	text-transform: uppercase;
+}
+
+p{
+	color: #888;
+	line-height: 1.5;
+	font-weight: 300;
+	font-size: 1.25em;
+}
+
+.recipe{
+	position: relative;
+}
+
+.main-accordion{
+	position: absolute;
+	left: 1%;
+	top: 32px;
+	z-index: 2;
+	transform: scale(3);
+	-webkit-transform: scale(3);
+	opacity: 0;
+}
+
+.icon, .title-name{
+	display: inline-block;
+	color: #ddd;
+}
+
+.summary{
+	visibility: hidden;
+	display:none;
+}
+
+.content{
+	position: relative;
+	margin-left: 5%;
+	visibility: hidden;
+	display: none;
+}
+
+
+/*Pseudo elements*/
+input[type="checkbox"]:checked ~ div.summary{
+	visibility: visible;
+	display: block;
+}
+
+input[type="checkbox"]:checked ~ div.content{
+	visibility: visible;
+	display: block;
+}
+
+input[type="checkbox"]:checked ~ div.icon{
+	color: #47a3da;
+	transform: rotate(90deg);
+}
+
+input[type="checkbox"]:hover ~ div.icon{
+	color: #47a3da;
+	transform: rotate(45deg);
+} 
+
+input[type="checkbox"]:hover{
+	cursor: pointer;
+}
+
